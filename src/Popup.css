@@ -1,0 +1,9 @@
+.popup-wrapper {
+    border: 10px solid #192f60;
+    padding: 40px 40px;
+    height: 30px;
+    width: 300px;
+    margin-top: 30px !important;
+    margin: auto;
+    font-size: 30px;
+}

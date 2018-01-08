@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Popup from './Popup.js'
 
 class App extends Component {
+    constructor(props){
+        super(props)
+        this.state={
+            hover : false
+        }
+
+    }
+    mouseOver(e){
+        this.setState({
+            hover : true
+        })
+    }
+    mouseOut(e){
+        this.setState({
+            hover: false
+        })
+    }
   render() {
+        console.log(this.state.hover)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+       <div
+           className="hover-icon"
+           onMouseOver={this.mouseOver.bind(this)}
+           onMouseOut={this.mouseOut.bind(this)}
+       >
+           Hover here!
+       </div>
+          {this.state.hover? <Popup /> : ''}
       </div>
     );
   }
